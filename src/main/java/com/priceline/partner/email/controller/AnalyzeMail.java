@@ -35,7 +35,7 @@ import com.priceline.partner.email.DTO.ResearchOutcomeRequest.*;
     private final ChatClient chatClient;
         private static final String IMAP_HOST = "imap.gmail.com";
         private static final String EMAIL = "mohd.aatif90.bkp@gmail.com";
-        private static final String PASSWORD = "essn wiek adgv nbfi";
+        private static final String APP_CRED = "essn wiek adgv ****";
         private static final String ANALYSIS_PROMPT = """
         Analyze the following email content and determine if a car was used or not.
         Respond with only one of these exact words:
@@ -68,7 +68,7 @@ import com.priceline.partner.email.DTO.ResearchOutcomeRequest.*;
             props.setProperty("mail.store.protocol", "imaps");
             Session session = Session.getInstance(props, null);
             Store store = session.getStore();
-            store.connect(IMAP_HOST, EMAIL, PASSWORD);
+            store.connect(IMAP_HOST, EMAIL, APP_CRED);
             return store;
         }
 
